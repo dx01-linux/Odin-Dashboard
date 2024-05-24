@@ -58,6 +58,8 @@
                     width : 380px ;
                     min-width: 100px;
                     border-radius: 10px;
+                    background-color: var(--content-background);
+                    border: 1px solid black;
                 }
             }
             #profile {
@@ -131,12 +133,66 @@
 }
 
 
-
-
-
-
-
 #aside {
     grid-row: 1 / 2;
     grid-column: 1 / 3;
+    background-color: var(--actio-bttns-background);
+    border-left: 2px solid rgb(73, 73, 73);
+
+    > div:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60%;
+        padding: 0% 10%;
+        /* logo , part1 , par2 */
+        >:nth-child(n){
+            width: 80%;
+            /* gap between  */
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            > :nth-child(n){
+                display: flex;
+                column-gap: 20px;
+                i , p {
+                    font-size: 1.7rem;
+                    color : white  ;
+                }
+            }
+        }
+        >div#logo:first-child {
+            width: 100%;
+            align-self: flex-start;
+            i {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 2.2rem;
+            }
+        }
+
+    }    
+    /* #part2 ,#part3 {
+        > :nth-child(n){
+            height: 100%;
+            display: flex;
+            column-gap: 20px;
+            i , p {
+                font-size: 1.5rem;
+                color : white  ;
+            }
+        }
+    }
+    #logo{
+        > :nth-child(n){
+            display: flex;
+            column-gap: 15px;
+            i , p {
+                font-size: 2rem;
+                color : white  ;
+            }
+        }
+    } */
 }
