@@ -13,6 +13,7 @@
     --actio-bttns-background :  rgb(145, 162, 218);
     --content-background : rgb(245, 241, 241) ;
 }
+
 #wrapper {
     width: 100vw;
     height: 100vh;
@@ -113,6 +114,48 @@
     >#content {
         grid-row: 2 / 5;
         background-color: var(--content-background);
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        
+        #projects {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            display: grid;
+            grid-template-rows: 10% 90%;
+            padding-left: 10px;
+            padding-bottom: 40px;
+            /*title*/
+            >:first-child{
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+            }
+            /* projects grid*/
+            >:last-child{
+                display: grid;
+                grid-template-columns: repeat(2 , 1fr) ;
+                grid-template-rows: repeat(3 , 1fr);
+                row-gap: 15px;
+                column-gap: 15px;
+            
+                >:nth-child(odd){
+                    grid-column: 1 / 2;
+                    grid-row: span 1;
+                }
+                >:nth-child(even){
+                    grid-template-columns: 2 / 3;
+                    grid-row: span 1;
+                }
+            }
+        }
+        #announcements{
+            grid-column: 3 / 4;
+        }
+        #trending {
+            grid-column: 3/4;
+            grid-row: 2 / 3;
+        }
     }
 }
 
@@ -131,7 +174,31 @@
     font-size: 1.5rem;
     border: none;
 }
-
+.card {
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px gray;
+    border-left: 4px solid yellow;
+    padding-left: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* header */ 
+    >:first-child{
+        font-size: 1.5rem;
+    }
+    /* description */
+    >:nth-child(2){
+        overflow-y: scroll;
+    }
+    /* icons */
+    >:last-child {
+        margin-top: 5px;
+        align-self: flex-end;
+        font-size: 1.2rem;
+    }
+}
 
 #aside {
     grid-row: 1 / 2;
@@ -149,7 +216,6 @@
         /* logo , part1 , par2 */
         >:nth-child(n){
             width: 80%;
-            /* gap between  */
             display: flex;
             flex-direction: column;
             row-gap: 10px;
@@ -174,25 +240,4 @@
         }
 
     }    
-    /* #part2 ,#part3 {
-        > :nth-child(n){
-            height: 100%;
-            display: flex;
-            column-gap: 20px;
-            i , p {
-                font-size: 1.5rem;
-                color : white  ;
-            }
-        }
-    }
-    #logo{
-        > :nth-child(n){
-            display: flex;
-            column-gap: 15px;
-            i , p {
-                font-size: 2rem;
-                color : white  ;
-            }
-        }
-    } */
 }
